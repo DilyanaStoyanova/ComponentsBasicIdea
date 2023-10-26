@@ -1,11 +1,9 @@
-import movies from "../assets/movies";
-
 export default function Movie(props) {
     return (
         <li>
-            <h3>{props.movie.title}</h3>
-            <p>Year: {props.movie.year}</p>
-            <p>Cast: {props.movie.actors}</p>
+            <h5>{props.data.title}</h5>
+            <p>Year: {props.data.year}</p>
+            <p>Actors: {props.data.actors}</p>
         </li>
     );
 }

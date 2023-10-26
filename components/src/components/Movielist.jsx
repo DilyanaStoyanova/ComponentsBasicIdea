@@ -1,17 +1,17 @@
+import Heading from "./Heading";
 import Movie from "./Movie";
 
 export default function MovieList(props) {
     return (
-        <div className="site-list">
-            <h1>{props.headingText}</h1>
-            <h2>{props.secondaryHeading}</h2>
+        <div>
+            <Heading>{props.title}</Heading>
             <ul>
-                <Movie movie={props.movies[0]}/>
-                <Movie movie={props.movies[1]}/>
-                <Movie movie={props.movies[2]}/>
-                <Movie movie={props.movies[3]}/>
-                <Movie movie={props.movies[4]}/>
-            </ul>
+            <Movie data={props.movies[0]}/>
+            <Movie data={props.movies[1]}/>
+            <Movie data={props.movies[2]}/>
+            <Movie data={props.movies[3]}/>
+            <Movie data={props.movies[4]}/>
+        </ul>
         </div>
     );
 }
