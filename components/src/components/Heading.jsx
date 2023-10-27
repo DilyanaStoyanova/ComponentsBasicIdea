@@ -1,5 +1,5 @@
 export default function Heading(props) {
     return (
-        <h3>{props.children}</h3>
+        <h1>{props.children}</h1>
     );
 }

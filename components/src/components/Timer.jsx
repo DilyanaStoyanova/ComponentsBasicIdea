@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Timer(props) {
+export default function Timer() {
     const [time, setTime] = useState(0);
 
     setTimeout(() => {
@@ -10,7 +10,7 @@ export default function Timer(props) {
     return (
         <div>
             <h4>Timer</h4>
-            <p>{time}</p>
+            <p>Time: {time}</p>
         </div>
     );
 }

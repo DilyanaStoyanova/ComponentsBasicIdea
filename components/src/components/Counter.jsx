@@ -1,49 +1,52 @@
 import { useState } from "react";
 
-export default function Counter(props) {
-    const [count, setCount] = useState(props.startValue);
+export default function Counter() {
+    const [clicks, setClicks] = useState(0);
 
-    const incrementClickHandler = () => {
-        setCount(oldValue => oldValue + 1);
+    const decrementClickHander = () => {
+        setClicks(c => c - 1);
     };
 
-    const decrementClickHandler = () => {
-        setCount(oldValue => oldValue - 1);
+    const clearClickHandler = () => {
+        setClicks(0);
+    };
+
+    const incrementClickHander = () => {
+        setClicks(c => c + 1);
     };
 
     let message;
-    switch (count) {
+
+    switch (clicks) {
         case 1:
-            message = 'Excellent';
+            message = 'Poor';
             break;
         case 2:
-            message = 'Very Good';
-            break;
-        case 3:
             message = 'Good';
             break;
+        case 3:
+            message = 'Very Good';
+            break;
         case 4:
-            message = 'Poor';
+            message = 'Excellent';
             break;
         case 5:
             message = 'Outstanding';
             break;
-
         default:
-            message = 'Unbelieve';
+            message = 'Fine';
             break;
     }
 
     return (
         <div>
-            <h4>Counter</h4>
             {message}
-            {count < 0 ? <p>Invalid</p> : <p>Valid</p>}
-            {count === 0 && <p>Start Increment</p>}
-            <button onClick={decrementClickHandler}>-</button>
-            <button onClick={() => setCount(0)}>Reset</button>
-            <button onClick={incrementClickHandler}>+</button>
-            <p>Count {count}</p>
+            {clicks === 0 && <p>Start clicking</p> }
+            {clicks < 0 ? <p>Invalid value</p> : <p>Keep clicking</p>}
+            <button onClick={decrementClickHander}>-</button>
+            <button onClick={clearClickHandler}>Reset</button>
+            <button onClick={incrementClickHander}>+</button>
+            <p>Clicks: {clicks}</p>
         </div>
     );
 }
